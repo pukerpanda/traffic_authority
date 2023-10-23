@@ -1,0 +1,17 @@
+{
+    "python.terminal.launchArgs": [
+        "-m",
+        "IPython",
+        "--no-autoindent",
+    ],
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/:${env:PYTHONPATH}"
+    },
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/",
+    ],
+    // "python.autoComplete.extraPaths": [
+    //     "/opt/ros/noetic/lib/python3/dist-packages"
+    // ],
+
+}
