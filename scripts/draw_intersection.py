@@ -7,7 +7,7 @@ place_name = "Your City, Your Country"
 #graph = ox.graph_from_place(place_name, network_type="all")
 
 # Convert the graph to a networkx MultiDiGraph
-G = nx.MultiDiGraph(loc="graph")
+G = nx.MultiDiGraph()
 G.add_node(1)
 G.add_nodes_from([2, 3])
 G.add_nodes_from(range(100, 110))
@@ -18,11 +18,13 @@ intersection_nodes = []
 
 # Iterate through the nodes in the graph and identify intersection nodes
 for node in G.nodes(data=True):
-    if len(list(G.edges(node[0], keys=True)) > 2):
-        intersection_nodes.append(node)
+    print(node)
+    intersection_nodes.append(node)
+#    if len(list(G.edges(node[0], keys=True)) > 2):
 
 # Create a map with the base network graph
-fig, ax = ox.plot_graph(ox.project_graph(graph), show=False, close=False)
+#ox.project_graph(G)
+fig, ax = ox.plot_graph(G, show=False, close=False)
 
 # Highlight intersection nodes on the map
 for node in intersection_nodes:
@@ -30,4 +32,5 @@ for node in intersection_nodes:
     plt.scatter(x, y, c='red', s=30, marker='o')
 
 # Show the map with intersection nodes
+plt.plot([1,2,3,4,5,2,3,1])
 plt.show()
