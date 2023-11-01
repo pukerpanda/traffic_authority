@@ -24,3 +24,9 @@ matcher: https://github.com/Parskatt/RoMa.git
    git clone https://github.com/ros-perception/image_common.git -b humble
 
 colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Debug
+ros2 launch pylon_ros2_camera_wrapper pylon_ros2_camera.launch.py  node_name:=cam0 camera_id:=traffic
+
+frame_id: pylon_camera
+height: 960
+width: 1280
+encoding: rgb8
