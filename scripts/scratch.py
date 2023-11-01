@@ -46,3 +46,21 @@ geospatial_point = transform.TransformPoint(geospatial_point[0], geospatial_poin
 
 # Print the georeferenced coordinates
 print("Georeferenced Point (WGS84):", geospatial_point[0], geospatial_point[1])
+
+def esential_from_fundamental(F, kps1, kps2):
+    camera_matrix = np.array([
+      [1019.37642,    0.     ,  632.40784],
+      [0.     , 1016.04577,  490.07351],
+      [0.     ,    0.     ,    1.  ]
+    ])
+    # Use F to recover the essential matrix (E)
+    E = camera_matrix.T @ F @ camera_matrix
+
+    # Recover the relative camera poses using E
+    _, R, t, _ = cv2.recoverPose(E, kps1, kps2, camera_matrix)
+    from transforms3d import euler as euler
+    euler = euler.mat2euler(R)
+    # to degrees
+    euler = np.rad2deg(euler)
+
+# esential_from_fundamental(F, kps1, kps2)
