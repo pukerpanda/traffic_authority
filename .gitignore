@@ -129,6 +129,9 @@ ENV/
 env.bak/
 venv.bak/
 up/
+log/
+install/
+build/
 
 # Spyder project settings
 .spyderproject

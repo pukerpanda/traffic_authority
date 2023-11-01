@@ -15,3 +15,12 @@ matcher: https://github.com/Parskatt/RoMa.git
 
     https://nvidia-isaac-ros.github.io/getting_started/isaac_ros_buildfarm_cdn.html
 
+    sudo apt install ros-humble-diagnostic-updater
+    sudo apt install ros-humble-pcl-ros
+
+## Pylon camera
+
+   git clone -b humble https://github.com/basler/pylon-ros-camera
+   git clone https://github.com/ros-perception/image_common.git -b humble
+
+colcon build --symlink-install --cmake-args=-DCMAKE_BUILD_TYPE=Debug
