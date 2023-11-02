@@ -10,6 +10,7 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}/",
     ],
+    "cmake.sourceDirectory": "/home/nvidia/repo/traffic_authority/build/pylon_ros2_camera_interfaces/pylon_ros2_camera_interfaces__py",
     // "python.autoComplete.extraPaths": [
     //     "/opt/ros/noetic/lib/python3/dist-packages"
     // ],

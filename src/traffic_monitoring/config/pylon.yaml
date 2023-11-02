@@ -13,7 +13,7 @@
     #  The CameraInfo URL (Uniform Resource Locator) where the optional intrinsic
     #  camera calibration parameters are stored. This URL string will be parsed
     #  from the ROS-CameraInfoManager:
-    camera_info_url: "file:///home/axadmin/repo/yolo/traffic_authority/config/ost.yaml"
+    camera_info_url: "file://${ROS_HOME}/camera_info/${NAME}.yaml"
 
     #  The encoding of the pixels -- channel meaning, ordering, size
     #  taken from the list of strings in include/sensor_msgs/image_encodings.h
@@ -94,7 +94,7 @@
     #  The gain_auto flag indicates, that the desired brightness will be
     #  reached by adapting the gain.
     exposure_auto: true
-    gain_auto: false 
+    gain_auto: false
 
     ##########################################################################
 
