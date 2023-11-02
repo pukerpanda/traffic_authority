@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
 import os
-
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
@@ -18,27 +23,12 @@ def generate_launch_description():
         'pylon.yaml'
     )
 
-    config_file = LaunchConfiguration('config_file', default=default_config_file)
-
-
     return LaunchDescription([
-        Node(
-        package='pylon_ros2_camera_wrapper',
-        namespace=camera_id,
-        executable='pylon_ros2_camera_wrapper',
-        name=node_name,
-        output='screen',
-        respawn=False,
-        emulate_tty=True,
-        parameters=[
-            config_file,
-            {
-                # 'gige/mtu_size': mtu_size,
-                # 'startup_user_set': startup_user_set,
-                # 'enable_status_publisher': enable_status_publisher,
-                # 'enable_current_params_publisher': enable_current_params_publisher
-            }
-        ]
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([os.path.join(get_package_share_directory('pylon_ros2_camera_wrapper'),
+                                                        'launch/pylon_ros2_camera.launch.py')]),
+            launch_arguments={'config_file': default_config_file}.items(),
         ),
+
     ])
 
