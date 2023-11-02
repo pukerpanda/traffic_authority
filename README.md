@@ -30,3 +30,8 @@ frame_id: pylon_camera
 height: 960
 width: 1280
 encoding: rgb8
+
+## Deepstream
+Boost the clocks:
+  sudo nvpmodel -m 0
+  sudo jetson_clocks
