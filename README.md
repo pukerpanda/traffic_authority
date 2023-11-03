@@ -35,3 +35,19 @@ encoding: rgb8
 Boost the clocks:
   sudo nvpmodel -m 0
   sudo jetson_clocks
+
+
+DeepStream Application in Python
+https://github.com/NVIDIA-AI-IOT/deepstream_python_apps/blob/master/HOWTO.md
+https://github.com/NVIDIA-AI-IOT/deepstream_python_apps
+https://github.com/NVIDIA-AI-IOT/ros2_deepstream
+
+DNN Inference Nodes for ROS/ROS2
+https://github.com/dusty-nv/ros_deep_learning/tree/master
+
+Flask + REST
+https://github.com/dusty-nv/jetson-inference/blob/master/docs/webrtc-flask.md
+
+Isaac ROS Compression
+https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_compression
+
